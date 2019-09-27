@@ -55,7 +55,9 @@ Several of the form fields update dynamically:
 
 Trigger and trigger handler classes catpure the new and old versions of updated records. The handlers instantiate NoticeRuleCheckInitializer with the old and new records. 
 
-NoticeRuleCheckInitializer uses NoticeRuleGetter to fetch all active rules targeting the correct SObject type. The old records, new records, and rules are then passed to NoticeRuleChecker, which performs the check of records vs. rules and creates any necessary Notice Rule Events. 
+NoticeRuleCheckInitializer uses NoticeRuleGetter to fetch all active rules targeting the correct SObject type. A check is performed to remove any records created less than two seconds prior. This is to ensure records updated by 'after insert' triggers and similar processes are not included. 
+
+The old records, new records, and rules are then passed to NoticeRuleChecker, which performs the check of records vs. rules and creates any necessary Notice Rule Events. 
 
 ### Apex Test Classes
 
