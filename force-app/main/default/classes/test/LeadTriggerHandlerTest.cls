@@ -27,7 +27,7 @@ public with sharing class LeadTriggerHandlerTest {
             leads.add(l);
         }
         insert leads;
-        Map<Id,Lead> oldLeadMap = new Map<Id,Lead>([SELECT Id FROM Lead]);
+        Map<Id,Lead> oldLeadMap = new Map<Id,Lead>([SELECT Id, CreatedDate FROM Lead]);
         Map<Id,Lead> newLeadMap = oldLeadMap.clone();
 
         LeadTriggerHandler handler = new LeadTriggerHandler(isExecuting, batchSize);

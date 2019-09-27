@@ -26,7 +26,7 @@ public with sharing class AcountTriggerHandlerTest {
             accts.add(a);
         }
         insert accts;
-        Map<Id,Account> oldAccountMap = new Map<Id,Account>([SELECT Id FROM Account]);
+        Map<Id,Account> oldAccountMap = new Map<Id,Account>([SELECT Id, CreatedDate FROM Account]);
         Map<Id,Account> newAccountMap = oldAccountMap.clone();
 
         AccountTriggerHandler handler = new AccountTriggerHandler(isExecuting, batchSize);

@@ -17,14 +17,15 @@ private class NoticeRuleCheckInitializerTest {
 
         List<Account> accounts = TestDataFactory.makeInsertAccounts(accCount);
         TestDataFactory.makeInsertNoticeRules(ruleCount, ruleProps);
-        Map<Id,Account> oldAccounts = new Map<Id,Account>([SELECT Id, Name FROM Account]);
+        Map<Id,Account> oldAccounts = new Map<Id,Account>([SELECT Id, Name, CreatedDate FROM Account]);
         Map<Id,Account> newAccounts = oldAccounts.deepClone();
-        NoticeRuleCheckInitializer init = new NoticeRuleCheckInitializer(oldAccounts, newAccounts);
+        NoticeRuleCheckInitializer init = new NoticeRuleCheckInitializer(newAccounts, oldAccounts);
 
         System.assertNotEquals(null, init, 'Initializer should not be null.');
         System.assertNotEquals(null, init.ruleGetter, 'Rule getter should not be null.');
         System.assertNotEquals(null, init.ruleChecker, 'Rule checker should not be null.');
-        System.assertEquals(recTypeObj, init.recType, 'recType should be' + recTypeObj);
+        System.assertNotEquals(accCount, init.newRecords.size(), 'Number of new records should equal ' + accCount);
+        System.assertNotEquals(accCount, init.oldRecords.size(), 'Number of old records should equal ' + accCount);
         System.assertEquals(ruleCount, init.rules.size(), 'Number of rules should be ' + ruleCount);
 
     }
