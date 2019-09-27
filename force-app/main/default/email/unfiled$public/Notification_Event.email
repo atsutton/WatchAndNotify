@@ -1,0 +1,13 @@
+-----NOTICE RULE-----
+Id: {!NoticeRule.Id}
+Name: {!NoticeRule.Name}
+Record Type: {!NoticeRule.Target_Record_Type__c}
+Field: {!NoticeRule.Target_Field__c}
+Change: {!NoticeRule.Target_Change__c}
+Value: {!NoticeRule.Target_Value__c}
+
+-----NOTICE RULE EVENT-----
+Id: {!NoticeEvent.Id}
+Time: {!NoticeEvent.CreatedDate}
+
+Notification email sent by Watch and Notify

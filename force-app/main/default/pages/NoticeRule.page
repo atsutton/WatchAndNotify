@@ -1,0 +1,49 @@
+<apex:page standardController="Notice_Rule__c" extensions="NoticeRuleExtension" tabStyle="Notice_Rule__c" lightningStylesheets="true">
+    <script>
+        function handleRecordTypeChange(textid) {
+            document.getElementById(textid).selectedIndex = -1;
+        }
+    </script>
+    <apex:messages />
+    <apex:form>
+        <apex:pageBlock title="Notice Rule">
+            <apex:actionRegion>
+                <apex:pageBlockSection title="{!titleSectionMain}" columns="1" id="sectionMain">
+                    <apex:inputField value="{!Notice_Rule__c.Name}" />
+                    <apex:inputField value="{!Notice_Rule__c.Target_Record_Type__c}" id="inputRecordType" label="* Record Type">
+                        <apex:actionSupport event="onchange" 
+                                            action="{!updateTargetFieldOptions}" 
+                                            onsubmit="handleRecordTypeChange('{!$Component.sectionTargetField.selectField}')" 
+                                            rerender="sectionMain"
+                                            focus="inputRecordType" />
+                    </apex:inputField>
+                    <apex:pageBlockSectionItem id="sectionTargetField">
+                        <apex:outputLabel for="selectField" value="* Target Field" />
+                        <apex:outputPanel>
+                            <apex:selectList value="{!selectedTargetField}" 
+                                            multiselect="false" 
+                                            size="1" 
+                                            id="selectField" 
+                                            style="min-width:170px;">
+                                <apex:selectOptions value="{!listTargetFieldOptions}" />
+                            </apex:selectList>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:inputField value="{!Notice_Rule__c.Target_Change__c}" id="inputChange" label="* Target Change">
+                        <apex:actionSupport event="onchange" 
+                                            action="{!updateShowTargetValue}" 
+                                            rerender="sectionMain"
+                                            focus="inputChange" />
+                    </apex:inputField>
+                    <apex:inputField value="{!Notice_Rule__c.Target_Value__c}" rendered="{!showTargetValueField}"/>
+                    <apex:inputField value="{!Notice_Rule__c.Email__c}" />
+                    <apex:inputField value="{!Notice_Rule__c.Active__c}" />
+                    <apex:pageBlockSectionItem>
+                        <apex:commandButton action="{!save}" value="Save Rule" />
+                        <apex:commandButton action="{!cancel}" value="Cancel" />
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            </apex:actionRegion>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

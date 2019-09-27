@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Notice_Rule__c</fullName>
+    <externalId>false</externalId>
+    <label>Notice Rule</label>
+    <referenceTo>Notice_Rule__c</referenceTo>
+    <relationshipLabel>Notice Rule Events</relationshipLabel>
+    <relationshipName>Notice_Rule_Events</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

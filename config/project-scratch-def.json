@@ -1,0 +1,10 @@
+{
+  "orgName": "WatchAndNotify",
+  "edition": "Enterprise",
+  "features": [],
+  "settings": {
+    "orgPreferenceSettings": {
+      "s1DesktopEnabled": true
+    }
+  }
+}

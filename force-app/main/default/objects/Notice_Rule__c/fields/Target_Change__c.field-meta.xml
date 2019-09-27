@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Change__c</fullName>
+    <description>The type of change to monitor for in the targeted field.</description>
+    <externalId>false</externalId>
+    <label>Target Change</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Any change</fullName>
+                <default>false</default>
+                <label>Any change</label>
+            </value>
+            <value>
+                <fullName>Equals</fullName>
+                <default>false</default>
+                <label>Equals</label>
+            </value>
+            <value>
+                <fullName>Not equal to</fullName>
+                <default>false</default>
+                <label>Not equal to</label>
+            </value>
+            <value>
+                <fullName>Contains</fullName>
+                <default>false</default>
+                <label>Contains</label>
+            </value>
+            <value>
+                <fullName>Does not contain</fullName>
+                <default>false</default>
+                <label>Does not contain</label>
+            </value>
+            <value>
+                <fullName>Starts with</fullName>
+                <default>false</default>
+                <label>Starts with</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

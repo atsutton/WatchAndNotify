@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>Notice_Rule__c</defaultLandingTab>
+    <description>Make rules to watch for record changes and notify via email</description>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Watch And Notify</label>
+    <tabs>standard-AppLauncher</tabs>
+    <tabs>Notice_Rule__c</tabs>
+    <tabs>Notice_Rule_Event__c</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Lead</tabs>
+</CustomApplication>
